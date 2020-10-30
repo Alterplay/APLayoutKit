@@ -23,6 +23,7 @@ class MasterViewController: APBaseViewController<MasterView> {
         case center
         case widthHeight
         case safeArea
+        case updatingConstraints
         
         var title: String {
             switch self {
@@ -50,6 +51,8 @@ class MasterViewController: APBaseViewController<MasterView> {
                 return "Pin width and height"
             case .safeArea:
                 return "Pin to safe area"
+            case .updatingConstraints:
+                return "Updating constraints"
             }
         }
     }
@@ -161,6 +164,8 @@ extension MasterViewController: UITableViewDelegate {
             containerView.addSubview(UIView(), pin: [.safeArea(.pinToAllEdges)]) {
                 $0.backgroundColor = .red
             }
+        case .updatingConstraints:
+            containerView.addSubview(UpdateConstaintsView(), pin: .safeArea(.pinToAllEdges))
         }
         
         containerView.addSubview(UILabel(), pin: .center) {

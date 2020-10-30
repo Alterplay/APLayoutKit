@@ -16,6 +16,7 @@
 		72ED8E311ADAAFC0FFE82D19 /* Pods_APLayoutKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB13CAF87ED89109C55A6028 /* Pods_APLayoutKit_Tests.framework */; };
 		DF36D522254BFC5A007E3F6A /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36D521254BFC5A007E3F6A /* MasterView.swift */; };
 		DF7CE504254C1FB700A903BF /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CE503254C1FB700A903BF /* MasterTableViewCell.swift */; };
+		DFD3C631254C3C7400FD5331 /* UpdateConstaintsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C630254C3C7400FD5331 /* UpdateConstaintsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		DC31792D09E204967815471F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DF36D521254BFC5A007E3F6A /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		DF7CE503254C1FB700A903BF /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
+		DFD3C630254C3C7400FD5331 /* UpdateConstaintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateConstaintsView.swift; sourceTree = "<group>"; };
 		FC7AEE6BE006C662BE90E4DE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 		607FACD21AFB9204008FA782 /* Example for APLayoutKit */ = {
 			isa = PBXGroup;
 			children = (
+				DFD3C62F254C3C6200FD5331 /* Detail */,
 				DF7CE501254C1F9F00A903BF /* Master */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -176,6 +179,14 @@
 				DF7CE503254C1FB700A903BF /* MasterTableViewCell.swift */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		DFD3C62F254C3C6200FD5331 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				DFD3C630254C3C7400FD5331 /* UpdateConstaintsView.swift */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +364,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				DF36D522254BFC5A007E3F6A /* MasterView.swift in Sources */,
 				DF7CE504254C1FB700A903BF /* MasterTableViewCell.swift in Sources */,
+				DFD3C631254C3C7400FD5331 /* UpdateConstaintsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
