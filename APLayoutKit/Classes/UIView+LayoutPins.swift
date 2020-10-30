@@ -29,6 +29,46 @@ extension UIView {
                                                   attribute: to,
                                                   multiplier: multiplier,
                                                   constant: constant))
+        case .pinToVerticalEdges(let top, let bottom):
+            pinSubview(subview,
+                       pin: [
+                        .top(constant: top),
+                        .bottom(constant: bottom)],
+                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
+        case .pinToHorizontalEdges(let left, let right):
+            pinSubview(subview,
+                       pin: [
+                        .left(constant: left),
+                        .right(constant: right)],
+                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
+        case .top(let constant):
+            pinSubview(subview, pin: .relative(attribute: .top,
+                                               relatedBy: .equal,
+                                               to: .top,
+                                               multiplier: 1,
+                                               constant: constant),
+                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
+        case .bottom(let constant):
+            pinSubview(subview, pin: .relative(attribute: .bottom,
+                                               relatedBy: .equal,
+                                               to: .bottom,
+                                               multiplier: 1,
+                                               constant: constant),
+                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
+        case .left(let constant):
+            pinSubview(subview, pin: .relative(attribute: .leading,
+                                               relatedBy: .equal,
+                                               to: .leading,
+                                               multiplier: 1,
+                                               constant: constant),
+                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
+        case .right(let constant):
+            pinSubview(subview, pin: .relative(attribute: .trailing,
+                                               relatedBy: .equal,
+                                               to: .trailing,
+                                               multiplier: 1,
+                                               constant: constant),
+                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
         case .fixed,
              .width,
              .height:
@@ -47,6 +87,18 @@ extension UIView {
             pins.forEach{ constraints.append(contentsOf: self.pin(to: $0)) }
         case .relative:
             assert(true, "for relative pin please use pinSubview method")
+        case .pinToVerticalEdges:
+            assert(true, "for pinToVerticalEdges pin please use pinSubview method")
+        case .pinToHorizontalEdges:
+            assert(true, "for pinToHorizontalEdges pin please use pinSubview method")
+        case .top:
+            assert(true, "for top pin please use pinSubview method")
+        case .bottom:
+            assert(true, "for bottom pin please use pinSubview method")
+        case .left:
+            assert(true, "for left pin please use pinSubview method")
+        case .right:
+            assert(true, "for right pin please use pinSubview method")
         case .fixed(let attribute,
                     let relatedBy,
                     let constant):

@@ -12,35 +12,17 @@ public enum LayoutPins: ExpressibleByArrayLiteral {
     // MARK: - Convenience values
     
     public static let pinToAllEdges: LayoutPins = [
-        .pinToVerticalEdges,
-        .pinToHorizontalEdges
+        .pinToVerticalEdges(),
+        .pinToHorizontalEdges()
     ]
     
-    public static let pinToVerticalEdges: LayoutPins = [
-        .relative(attribute: .top,
-                  relatedBy: .equal,
-                  to: .top,
-                  multiplier: 1,
-                  constant: 0),
-        .relative(attribute: .bottom,
-                  relatedBy: .equal,
-                  to: .bottom,
-                  multiplier: 1,
-                  constant: 0)
-    ]
+    case pinToVerticalEdges(top: CGFloat = .zero, bottom: CGFloat = .zero)
+    case pinToHorizontalEdges(left: CGFloat = .zero, right: CGFloat = .zero)
     
-    public static let pinToHorizontalEdges: LayoutPins = [
-        .relative(attribute: .leading,
-                  relatedBy: .equal,
-                  to: .leading,
-                  multiplier: 1,
-                  constant: 0),
-        .relative(attribute: .trailing,
-                  relatedBy: .equal,
-                  to: .trailing,
-                  multiplier: 1,
-                  constant: 0)
-    ]
+    case top(constant: CGFloat = .zero)
+    case left(constant: CGFloat = .zero)
+    case right(constant: CGFloat = .zero)
+    case bottom(constant: CGFloat = .zero)
     
     public static let centerVertically: LayoutPins = .relative(attribute: .centerY,
                                                         relatedBy: .equal,
