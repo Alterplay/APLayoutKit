@@ -15,14 +15,14 @@
 		AB546B077397967597D6EEB132952D9D /* Pods-APLayoutKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBBD2C3ECC9E5C93742F8AF1DBBDB9A1 /* Pods-APLayoutKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C2C02BA7B706753001C0C1CE5BBC5822 /* APLayoutKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDE357C27471F1345685B26CA687596 /* APLayoutKit-dummy.m */; };
 		D718BBABDD2F2EB91DDA39F26560FEBE /* APLayoutKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 656188058C564670B6C331E66785F7FE /* APLayoutKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DF36D52B254BFCD9007E3F6A /* LayoutPins.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36D525254BFCD9007E3F6A /* LayoutPins.swift */; };
-		DF36D52D254BFCD9007E3F6A /* APBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36D527254BFCD9007E3F6A /* APBaseView.swift */; };
-		DF36D52E254BFCD9007E3F6A /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36D528254BFCD9007E3F6A /* Preview.swift */; };
-		DF36D52F254BFCD9007E3F6A /* UIView+LayoutPins.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36D529254BFCD9007E3F6A /* UIView+LayoutPins.swift */; };
-		DF36D530254BFCD9007E3F6A /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36D52A254BFCD9007E3F6A /* UIView+Convenience.swift */; };
-		DF7CE50A254C203500A903BF /* APBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CE509254C203500A903BF /* APBaseTableViewCell.swift */; };
-		DF7CE50F254C374000A903BF /* APBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CE50E254C374000A903BF /* APBaseCollectionViewCell.swift */; };
-		DFBC4C79254C37C30072FE38 /* APBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBC4C78254C37C20072FE38 /* APBaseViewController.swift */; };
+		DFD3C624254C3B9C00FD5331 /* UIView+LayoutPins.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C619254C3B9C00FD5331 /* UIView+LayoutPins.swift */; };
+		DFD3C625254C3B9C00FD5331 /* LayoutPins.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C61A254C3B9C00FD5331 /* LayoutPins.swift */; };
+		DFD3C626254C3B9C00FD5331 /* APBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C61C254C3B9C00FD5331 /* APBaseTableViewCell.swift */; };
+		DFD3C627254C3B9C00FD5331 /* APBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C61D254C3B9C00FD5331 /* APBaseCollectionViewCell.swift */; };
+		DFD3C628254C3B9C00FD5331 /* APBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C61E254C3B9C00FD5331 /* APBaseViewController.swift */; };
+		DFD3C629254C3B9C00FD5331 /* APBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C61F254C3B9C00FD5331 /* APBaseView.swift */; };
+		DFD3C62A254C3B9C00FD5331 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C621254C3B9C00FD5331 /* Preview.swift */; };
+		DFD3C62B254C3B9C00FD5331 /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C623254C3B9C00FD5331 /* UIView+Convenience.swift */; };
 		F02852C4D9C7CE29CAA70EAD55C0F7A6 /* Pods-APLayoutKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CB01C0605C7F7AE277818BF51474E2 /* Pods-APLayoutKit_Tests-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -71,14 +71,14 @@
 		C91C575D10D8EA3888D77AA7035C56CE /* Pods-APLayoutKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-APLayoutKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		D4B24260EB87F23E94D815088FA74059 /* Pods-APLayoutKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-APLayoutKit_Example.modulemap"; sourceTree = "<group>"; };
 		DDB54359E7E112F2283242D8ABDBD8ED /* Pods-APLayoutKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-APLayoutKit_Example-frameworks.sh"; sourceTree = "<group>"; };
-		DF36D525254BFCD9007E3F6A /* LayoutPins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutPins.swift; sourceTree = "<group>"; };
-		DF36D527254BFCD9007E3F6A /* APBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseView.swift; sourceTree = "<group>"; };
-		DF36D528254BFCD9007E3F6A /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
-		DF36D529254BFCD9007E3F6A /* UIView+LayoutPins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutPins.swift"; sourceTree = "<group>"; };
-		DF36D52A254BFCD9007E3F6A /* UIView+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
-		DF7CE509254C203500A903BF /* APBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APBaseTableViewCell.swift; sourceTree = "<group>"; };
-		DF7CE50E254C374000A903BF /* APBaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APBaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		DFBC4C78254C37C20072FE38 /* APBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseViewController.swift; sourceTree = "<group>"; };
+		DFD3C619254C3B9C00FD5331 /* UIView+LayoutPins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutPins.swift"; sourceTree = "<group>"; };
+		DFD3C61A254C3B9C00FD5331 /* LayoutPins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutPins.swift; sourceTree = "<group>"; };
+		DFD3C61C254C3B9C00FD5331 /* APBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseTableViewCell.swift; sourceTree = "<group>"; };
+		DFD3C61D254C3B9C00FD5331 /* APBaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		DFD3C61E254C3B9C00FD5331 /* APBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseViewController.swift; sourceTree = "<group>"; };
+		DFD3C61F254C3B9C00FD5331 /* APBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseView.swift; sourceTree = "<group>"; };
+		DFD3C621254C3B9C00FD5331 /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		DFD3C623254C3B9C00FD5331 /* UIView+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
 		E6867497185C8932FB5332FB6B1C3153 /* APLayoutKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = APLayoutKit.release.xcconfig; sourceTree = "<group>"; };
 		EBBD2C3ECC9E5C93742F8AF1DBBDB9A1 /* Pods-APLayoutKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-APLayoutKit_Tests-umbrella.h"; sourceTree = "<group>"; };
 		ECDE357C27471F1345685B26CA687596 /* APLayoutKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "APLayoutKit-dummy.m"; sourceTree = "<group>"; };
@@ -202,10 +202,10 @@
 		96ADBCFDDC98106BA2D51829067C3FE2 /* APLayoutKit */ = {
 			isa = PBXGroup;
 			children = (
-				DFBC4C82254C37E30072FE38 /* Preview */,
-				DFBC4C81254C37D80072FE38 /* Extensions */,
-				DFBC4C80254C37CE0072FE38 /* LayoutPins */,
-				DF7CE513254C37A200A903BF /* BaseView */,
+				DFD3C61B254C3B9C00FD5331 /* BaseView */,
+				DFD3C622254C3B9C00FD5331 /* Extensions */,
+				DFD3C618254C3B9C00FD5331 /* LayoutPins */,
+				DFD3C620254C3B9C00FD5331 /* Preview */,
 				887836ACA0B50EA9D3D9CD8E2279A7CE /* Pod */,
 				6DC25999ECEB50BC9F75599512E3ADC8 /* Support Files */,
 			);
@@ -240,40 +240,44 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		DF7CE513254C37A200A903BF /* BaseView */ = {
+		DFD3C618254C3B9C00FD5331 /* LayoutPins */ = {
 			isa = PBXGroup;
 			children = (
-				DF7CE509254C203500A903BF /* APBaseTableViewCell.swift */,
-				DF7CE50E254C374000A903BF /* APBaseCollectionViewCell.swift */,
-				DFBC4C78254C37C20072FE38 /* APBaseViewController.swift */,
-				DF36D527254BFCD9007E3F6A /* APBaseView.swift */,
+				DFD3C619254C3B9C00FD5331 /* UIView+LayoutPins.swift */,
+				DFD3C61A254C3B9C00FD5331 /* LayoutPins.swift */,
 			);
-			path = BaseView;
+			name = LayoutPins;
+			path = APLayoutKit/Classes/LayoutPins;
 			sourceTree = "<group>";
 		};
-		DFBC4C80254C37CE0072FE38 /* LayoutPins */ = {
+		DFD3C61B254C3B9C00FD5331 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
-				DF36D525254BFCD9007E3F6A /* LayoutPins.swift */,
-				DF36D529254BFCD9007E3F6A /* UIView+LayoutPins.swift */,
+				DFD3C61C254C3B9C00FD5331 /* APBaseTableViewCell.swift */,
+				DFD3C61D254C3B9C00FD5331 /* APBaseCollectionViewCell.swift */,
+				DFD3C61E254C3B9C00FD5331 /* APBaseViewController.swift */,
+				DFD3C61F254C3B9C00FD5331 /* APBaseView.swift */,
 			);
-			path = LayoutPins;
+			name = BaseView;
+			path = APLayoutKit/Classes/BaseView;
 			sourceTree = "<group>";
 		};
-		DFBC4C81254C37D80072FE38 /* Extensions */ = {
+		DFD3C620254C3B9C00FD5331 /* Preview */ = {
 			isa = PBXGroup;
 			children = (
-				DF36D52A254BFCD9007E3F6A /* UIView+Convenience.swift */,
+				DFD3C621254C3B9C00FD5331 /* Preview.swift */,
 			);
-			path = Extensions;
+			name = Preview;
+			path = APLayoutKit/Classes/Preview;
 			sourceTree = "<group>";
 		};
-		DFBC4C82254C37E30072FE38 /* Preview */ = {
+		DFD3C622254C3B9C00FD5331 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DF36D528254BFCD9007E3F6A /* Preview.swift */,
+				DFD3C623254C3B9C00FD5331 /* UIView+Convenience.swift */,
 			);
-			path = Preview;
+			name = Extensions;
+			path = APLayoutKit/Classes/Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,15 +437,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF36D530254BFCD9007E3F6A /* UIView+Convenience.swift in Sources */,
-				DF36D52F254BFCD9007E3F6A /* UIView+LayoutPins.swift in Sources */,
-				DF7CE50A254C203500A903BF /* APBaseTableViewCell.swift in Sources */,
+				DFD3C628254C3B9C00FD5331 /* APBaseViewController.swift in Sources */,
+				DFD3C627254C3B9C00FD5331 /* APBaseCollectionViewCell.swift in Sources */,
+				DFD3C62A254C3B9C00FD5331 /* Preview.swift in Sources */,
+				DFD3C624254C3B9C00FD5331 /* UIView+LayoutPins.swift in Sources */,
 				C2C02BA7B706753001C0C1CE5BBC5822 /* APLayoutKit-dummy.m in Sources */,
-				DF36D52E254BFCD9007E3F6A /* Preview.swift in Sources */,
-				DF36D52D254BFCD9007E3F6A /* APBaseView.swift in Sources */,
-				DF36D52B254BFCD9007E3F6A /* LayoutPins.swift in Sources */,
-				DFBC4C79254C37C30072FE38 /* APBaseViewController.swift in Sources */,
-				DF7CE50F254C374000A903BF /* APBaseCollectionViewCell.swift in Sources */,
+				DFD3C62B254C3B9C00FD5331 /* UIView+Convenience.swift in Sources */,
+				DFD3C625254C3B9C00FD5331 /* LayoutPins.swift in Sources */,
+				DFD3C626254C3B9C00FD5331 /* APBaseTableViewCell.swift in Sources */,
+				DFD3C629254C3B9C00FD5331 /* APBaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
