@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>APPreview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#if targetEnvironment(simulator)
+import SwiftUI
+
+@available (iOS 13.0, *)
+struct &lt;#ViewType#&gt;_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            Preview {
+                &lt;#ViewType#&gt;()
+            }
+        }
+    }
+}
+#endif</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CC849CBF-56D5-440A-A060-CE269EC010C1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Creates preview for your view</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>APPreview</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
