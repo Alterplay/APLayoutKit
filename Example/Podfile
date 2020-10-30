@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'APLayoutKit_Example' do
+  pod 'APLayoutKit', :path => '../'
+
+  target 'APLayoutKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
