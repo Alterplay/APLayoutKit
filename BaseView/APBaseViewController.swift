@@ -9,7 +9,7 @@ import UIKit
 
 open class APBaseViewController<ContentView: UIView>: UIViewController {
 
-    final lazy var contentView = makeContentView()
+    final public lazy var contentView = makeContentView()
     
     final public override func loadView() {
         view = contentView

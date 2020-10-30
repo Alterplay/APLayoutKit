@@ -11,11 +11,11 @@ public extension UIView {
     @discardableResult
     func addSubview<ViewType: UIView>(_ subview: ViewType,
                                       pin: LayoutPins = [],
-                                      configure: (ViewType) -> Void) -> ViewType {
+                                      configure: ((ViewType) -> Void)? = nil) -> ViewType {
         subview.translatesAutoresizingMaskIntoConstraints = false
         addSubview(subview)
         pinSubview(subview, pin: pin)
-        configure(subview)
+        configure?(subview)
         return subview
     }
     
@@ -24,10 +24,10 @@ public extension UIView {
 public extension UIStackView {
     @discardableResult
     func addArrangedSubview<ViewType: UIView>(_ subview: ViewType,
-                                      configure: (ViewType) -> Void) -> ViewType {
+                                      configure: ((ViewType) -> Void)? = nil) -> ViewType {
         subview.translatesAutoresizingMaskIntoConstraints = false
         addArrangedSubview(subview)
-        configure(subview)
+        configure?(subview)
         return subview
     }
 }

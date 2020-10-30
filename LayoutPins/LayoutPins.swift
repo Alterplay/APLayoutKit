@@ -38,8 +38,8 @@ public enum LayoutPins: ExpressibleByArrayLiteral {
         .centerVertically,
         .centerHorizontally
     ]
-    case width(constant: CGFloat)
-    case height(constant: CGFloat)
+    case width(constant: CGFloat, relation: NSLayoutConstraint.Relation = .equal)
+    case height(constant: CGFloat, relation: NSLayoutConstraint.Relation = .equal)
     
     // MARK: - Regular Values
     

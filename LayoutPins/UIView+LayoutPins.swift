@@ -46,7 +46,7 @@ extension UIView {
                                                relatedBy: .equal,
                                                to: .top,
                                                multiplier: 1,
-                                               constant: constant),
+                                               constant: -constant),
                        toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
         case .bottom(let constant):
             pinSubview(subview, pin: .relative(attribute: .bottom,
@@ -60,7 +60,7 @@ extension UIView {
                                                relatedBy: .equal,
                                                to: .leading,
                                                multiplier: 1,
-                                               constant: constant),
+                                               constant: -constant),
                        toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
         case .right(let constant):
             pinSubview(subview, pin: .relative(attribute: .trailing,
@@ -109,10 +109,10 @@ extension UIView {
                                                   attribute: .notAnAttribute,
                                                   multiplier: 1,
                                                   constant: constant))
-        case .width(let constant):
-            constraints.append(contentsOf: self.pin(to: .fixed(attribute: .width, relatedBy: .equal, constant: constant)))
-        case .height(let constant):
-            constraints.append(contentsOf: self.pin(to: .fixed(attribute: .height, relatedBy: .equal, constant: constant)))
+        case .width(let constant, let relation):
+            constraints.append(contentsOf: self.pin(to: .fixed(attribute: .width, relatedBy: relation, constant: constant)))
+        case .height(let constant, let relation):
+            constraints.append(contentsOf: self.pin(to: .fixed(attribute: .height, relatedBy: relation, constant: constant)))
         }
         return activate(constraints: constraints)
     }

@@ -8,12 +8,16 @@
 
 import APLayoutKit
 
-class MainView: APBaseView {
+class MasterView: APBaseView {
+    
+    var tableView: UITableView?
     
     override func setup() {
-        backgroundColor = .white
-        addSubview(UILabel(), pin: .center) {
-            $0.text = "Hello world"
+        backgroundColor = .systemBackground
+        tableView = addSubview(UITableView(), pin: [.pinToHorizontalEdges(),
+                                                    .safeArea(.top()),
+                                                    .bottom()]) {
+            $0.register(MasterTableViewCell.self, forCellReuseIdentifier: String(describing: MasterTableViewCell.self))
         }
     }
 }
@@ -26,7 +30,7 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             Preview {
-                MainView()
+                MasterView()
             }
             .previewLayout(.device)
         }
