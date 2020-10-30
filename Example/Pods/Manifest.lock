@@ -1,0 +1,16 @@
+PODS:
+  - APLayoutKit (0.1.0)
+
+DEPENDENCIES:
+  - APLayoutKit (from `../`)
+
+EXTERNAL SOURCES:
+  APLayoutKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  APLayoutKit: 67ed8455da138a7771b21e140835bda7555f4a04
+
+PODFILE CHECKSUM: d311c7d8ffdf67249f8dbb785dc0c6fc21c7a500
+
+COCOAPODS: 1.10.0

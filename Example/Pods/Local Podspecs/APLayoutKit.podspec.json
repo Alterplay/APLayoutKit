@@ -1,0 +1,22 @@
+{
+  "name": "APLayoutKit",
+  "version": "0.1.0",
+  "summary": "A short description of APLayoutKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/vladislavsosiuk/APLayoutKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "vladislavsosiuk": "v.sosiuk@alterplay.com"
+  },
+  "source": {
+    "git": "https://github.com/vladislavsosiuk/APLayoutKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "APLayoutKit/Classes/**/*"
+}

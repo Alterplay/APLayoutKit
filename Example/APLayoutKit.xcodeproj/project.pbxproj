@@ -15,6 +15,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		63639D81B2DD4545AABCBC57 /* Pods_APLayoutKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E75AA7FD0738C9A1581C44 /* Pods_APLayoutKit_Example.framework */; };
 		72ED8E311ADAAFC0FFE82D19 /* Pods_APLayoutKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB13CAF87ED89109C55A6028 /* Pods_APLayoutKit_Tests.framework */; };
+		DF36D522254BFC5A007E3F6A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36D521254BFC5A007E3F6A /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +32,7 @@
 		17E75AA7FD0738C9A1581C44 /* Pods_APLayoutKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APLayoutKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E747F57F3E7AAC0DDB87D4 /* Pods-APLayoutKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APLayoutKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-APLayoutKit_Example/Pods-APLayoutKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4311E2CA8AD9F17263C47BB0 /* Pods-APLayoutKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APLayoutKit_Example.release.xcconfig"; path = "Target Support Files/Pods-APLayoutKit_Example/Pods-APLayoutKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		5552067857F43AC0E5F4C8B4 /* APLayoutKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = APLayoutKit.podspec; path = ../APLayoutKit.podspec; sourceTree = "<group>"; };
+		5552067857F43AC0E5F4C8B4 /* APLayoutKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = APLayoutKit.podspec; path = ../APLayoutKit.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* APLayoutKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APLayoutKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,8 +46,9 @@
 		97F34E306B0E89CE36DC7382 /* Pods-APLayoutKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APLayoutKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-APLayoutKit_Tests/Pods-APLayoutKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9BCBE47EA0B9CF01F4985AD2 /* Pods-APLayoutKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APLayoutKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-APLayoutKit_Tests/Pods-APLayoutKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB13CAF87ED89109C55A6028 /* Pods_APLayoutKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APLayoutKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC31792D09E204967815471F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		FC7AEE6BE006C662BE90E4DE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DC31792D09E204967815471F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		DF36D521254BFC5A007E3F6A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FC7AEE6BE006C662BE90E4DE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				DF36D521254BFC5A007E3F6A /* MainView.swift */,
 			);
 			name = "Example for APLayoutKit";
 			path = APLayoutKit;
@@ -156,7 +159,6 @@
 				9BCBE47EA0B9CF01F4985AD2 /* Pods-APLayoutKit_Tests.debug.xcconfig */,
 				97F34E306B0E89CE36DC7382 /* Pods-APLayoutKit_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +229,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -333,6 +336,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				DF36D522254BFC5A007E3F6A /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -465,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -479,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = APLayoutKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -494,6 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = APLayoutKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
