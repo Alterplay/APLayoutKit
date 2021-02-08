@@ -15,7 +15,7 @@ final class MasterTableViewCell: APBaseTableViewCell {
     private var label: UILabel?
     
     override func setup() {
-        let containerView = contentView.addSubview(UIView(), pin: .pinToAllEdges) {
+        let containerView = contentView.addSubview(UIView(), pin: .pinToAllEdges()) {
             $0.pin(to: .height(constant: 50, relation: .greaterThanOrEqual))
         }
         label = containerView.addSubview(UILabel(), pin: [.centerVertically,

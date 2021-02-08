@@ -21,6 +21,7 @@ class MasterViewController: APBaseViewController<MasterView> {
         case centerVertically
         case centerHorizontally
         case center
+        case size
         case widthHeight
         case safeArea
         case updatingConstraints
@@ -47,6 +48,8 @@ class MasterViewController: APBaseViewController<MasterView> {
                 return "Pin to horizontal center"
             case .center:
                 return "Pin to center of both axes"
+            case .size:
+                return "Pin to size"
             case .widthHeight:
                 return "Pin width and height"
             case .safeArea:
@@ -90,12 +93,14 @@ extension MasterViewController: UITableViewDelegate {
         let detail = DetailController.allCases[indexPath.row]
         let viewController = UIViewController()
         viewController.title = detail.title
-        let containerView = viewController.view.addSubview(UIView(), pin: .pinToAllEdges) {
+        let containerView = viewController.view.addSubview(UIView(), pin: .pinToAllEdges()) {
             $0.backgroundColor = .yellow
         }
         switch detail {
         case .pinToAllEdges:
-            break
+            containerView.addSubview(UIView(), pin: .pinToAllEdges(insets: UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40))) {
+                $0.backgroundColor = .red
+            }
         case .pinToVerticalEdges:
             containerView.addSubview(UIView(), pin: [.pinToVerticalEdges(top: 100, bottom: 50),
                                                                            .width(constant: 50),
@@ -154,6 +159,15 @@ extension MasterViewController: UITableViewDelegate {
                                                      .height(constant: 50)]) {
                 $0.backgroundColor = .red
             }
+        case .size:
+            containerView.addSubview(UIView(), pin: [
+                .pinToSize(size: CGSize(width: 300, height: 100)),
+                .center,
+                .height(constant: 300, priority: UILayoutPriority(999)),
+                .width(constant: 200, priority: UILayoutPriority(999))
+            ]) {
+                $0.backgroundColor = .red
+            }
         case .widthHeight:
             containerView.addSubview(UIView(), pin: [.width(constant: 100),
                                                      .height(constant: 200),
@@ -161,11 +175,11 @@ extension MasterViewController: UITableViewDelegate {
                 $0.backgroundColor = .red
             }
         case .safeArea:
-            containerView.addSubview(UIView(), pin: [.safeArea(.pinToAllEdges)]) {
+            containerView.addSubview(UIView(), pin: [.safeArea(.pinToAllEdges())]) {
                 $0.backgroundColor = .red
             }
         case .updatingConstraints:
-            containerView.addSubview(UpdateConstaintsView(), pin: .safeArea(.pinToAllEdges))
+            containerView.addSubview(UpdateConstaintsView(), pin: .safeArea(.pinToAllEdges()))
         }
         
         containerView.addSubview(UILabel(), pin: .center) {

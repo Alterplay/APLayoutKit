@@ -9,69 +9,93 @@ import UIKit
 
 extension UIView {
     
+    private enum LayoutGuide {
+        case safeArea
+    }
+    
     @discardableResult
-    public func pinSubview(_ subview: UIView, pin: LayoutPins, toSafeAreaLayoutGuide: Bool = false) -> [NSLayoutConstraint] {
+    public func pinSubview(_ subview: UIView, pin: LayoutPins) -> [NSLayoutConstraint] {
+        return pinSubview(subview, pin: pin, layoutGuide: nil)
+    }
+    
+    @discardableResult
+    private func pinSubview(_ subview: UIView, pin: LayoutPins, layoutGuide: LayoutGuide?) -> [NSLayoutConstraint] {
         var constraints = [NSLayoutConstraint]()
         switch pin {
         case .safeArea(let pins):
-            constraints.append(contentsOf: pinSubview(subview, pin: pins, toSafeAreaLayoutGuide: true))
+            constraints.append(contentsOf: pinSubview(subview, pin: pins, layoutGuide: .safeArea))
         case .aggregate(let pins):
-            pins.forEach { constraints.append(contentsOf: pinSubview(subview, pin: $0, toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)) }
+            pins.forEach { constraints.append(contentsOf: pinSubview(subview, pin: $0, layoutGuide: layoutGuide)) }
         case .relative(let attribute,
                        let relatedBy,
                        let to,
                        let multiplier,
-                       let constant):
-            constraints.append(NSLayoutConstraint(item: toSafeAreaLayoutGuide ? safeAreaLayoutGuide : self,
-                                                  attribute: attribute,
-                                                  relatedBy: relatedBy,
-                                                  toItem: subview,
-                                                  attribute: to,
-                                                  multiplier: multiplier,
-                                                  constant: constant))
+                       let constant,
+                       let priority):
+            let constraint = NSLayoutConstraint(item: item(forLayoutGuide: layoutGuide),
+                                                attribute: attribute,
+                                                relatedBy: relatedBy,
+                                                toItem: subview,
+                                                attribute: to,
+                                                multiplier: multiplier,
+                                                constant: constant)
+            constraint.priority = priority
+            constraints.append(constraint)
+        case .pinToAllEdges(let insets):
+            pinSubview(subview,
+                       pin: [
+                        .pinToVerticalEdges(top: insets.top, bottom: insets.bottom),
+                        .pinToHorizontalEdges(left: insets.left, right: insets.right)
+                       ],
+                       layoutGuide: layoutGuide)
         case .pinToVerticalEdges(let top, let bottom):
             pinSubview(subview,
                        pin: [
                         .top(constant: top),
                         .bottom(constant: bottom)],
-                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
+                       layoutGuide: layoutGuide)
         case .pinToHorizontalEdges(let left, let right):
             pinSubview(subview,
                        pin: [
                         .left(constant: left),
                         .right(constant: right)],
-                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
-        case .top(let constant):
+                       layoutGuide: layoutGuide)
+        case .top(let constant, let priority):
             pinSubview(subview, pin: .relative(attribute: .top,
                                                relatedBy: .equal,
                                                to: .top,
                                                multiplier: 1,
-                                               constant: -constant),
-                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
-        case .bottom(let constant):
+                                               constant: -constant,
+                                               priority: priority),
+                       layoutGuide: layoutGuide)
+        case .bottom(let constant, let priority):
             pinSubview(subview, pin: .relative(attribute: .bottom,
                                                relatedBy: .equal,
                                                to: .bottom,
                                                multiplier: 1,
-                                               constant: constant),
-                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
-        case .left(let constant):
+                                               constant: constant,
+                                               priority: priority),
+                       layoutGuide: layoutGuide)
+        case .left(let constant, let priority):
             pinSubview(subview, pin: .relative(attribute: .leading,
                                                relatedBy: .equal,
                                                to: .leading,
                                                multiplier: 1,
-                                               constant: -constant),
-                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
-        case .right(let constant):
+                                               constant: -constant,
+                                               priority: priority),
+                       layoutGuide: layoutGuide)
+        case .right(let constant, let priority):
             pinSubview(subview, pin: .relative(attribute: .trailing,
                                                relatedBy: .equal,
                                                to: .trailing,
                                                multiplier: 1,
-                                               constant: constant),
-                       toSafeAreaLayoutGuide: toSafeAreaLayoutGuide)
+                                               constant: constant,
+                                               priority: priority),
+                       layoutGuide: layoutGuide)
         case .fixed,
              .width,
-             .height:
+             .height,
+             .pinToSize:
             constraints = subview.pin(to: pin)
         }
         return activate(constraints: constraints)
@@ -87,6 +111,8 @@ extension UIView {
             pins.forEach{ constraints.append(contentsOf: self.pin(to: $0)) }
         case .relative:
             assert(true, "for relative pin please use pinSubview method")
+        case .pinToAllEdges:
+            assert(true, "for pinToAllEdges pin please use pinSubview method")
         case .pinToVerticalEdges:
             assert(true, "for pinToVerticalEdges pin please use pinSubview method")
         case .pinToHorizontalEdges:
@@ -101,18 +127,26 @@ extension UIView {
             assert(true, "for right pin please use pinSubview method")
         case .fixed(let attribute,
                     let relatedBy,
-                    let constant):
-            constraints.append(NSLayoutConstraint(item: self,
-                                                  attribute: attribute,
-                                                  relatedBy: relatedBy,
-                                                  toItem: nil,
-                                                  attribute: .notAnAttribute,
-                                                  multiplier: 1,
-                                                  constant: constant))
-        case .width(let constant, let relation):
-            constraints.append(contentsOf: self.pin(to: .fixed(attribute: .width, relatedBy: relation, constant: constant)))
-        case .height(let constant, let relation):
-            constraints.append(contentsOf: self.pin(to: .fixed(attribute: .height, relatedBy: relation, constant: constant)))
+                    let constant,
+                    let priority):
+            let constraint = NSLayoutConstraint(item: self,
+                                                attribute: attribute,
+                                                relatedBy: relatedBy,
+                                                toItem: nil,
+                                                attribute: .notAnAttribute,
+                                                multiplier: 1,
+                                                constant: constant)
+            constraint.priority = priority
+            constraints.append(constraint)
+        case .pinToSize(let size):
+            constraints.append(contentsOf: self.pin(to: [
+                .width(constant: size.width),
+                .height(constant: size.height)
+            ]))
+        case .width(let constant, let relation, let priority):
+            constraints.append(contentsOf: self.pin(to: .fixed(attribute: .width, relatedBy: relation, constant: constant, priority: priority)))
+        case .height(let constant, let relation, let priority):
+            constraints.append(contentsOf: self.pin(to: .fixed(attribute: .height, relatedBy: relation, constant: constant, priority: priority)))
         }
         return activate(constraints: constraints)
     }
@@ -123,4 +157,12 @@ extension UIView {
         return constraints
     }
     
+    private func item(forLayoutGuide layoutGuide: LayoutGuide?) -> Any {
+        switch layoutGuide {
+        case .safeArea:
+            return safeAreaLayoutGuide
+        case .none:
+            return self
+        }
+    }
 }

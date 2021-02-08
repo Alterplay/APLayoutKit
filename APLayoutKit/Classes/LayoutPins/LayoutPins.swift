@@ -11,35 +11,34 @@ public enum LayoutPins: ExpressibleByArrayLiteral {
     
     // MARK: - Convenience values
     
-    public static let pinToAllEdges: LayoutPins = [
-        .pinToVerticalEdges(),
-        .pinToHorizontalEdges()
-    ]
-    
+    case pinToAllEdges(insets: UIEdgeInsets = .zero)
     case pinToVerticalEdges(top: CGFloat = .zero, bottom: CGFloat = .zero)
     case pinToHorizontalEdges(left: CGFloat = .zero, right: CGFloat = .zero)
     
-    case top(constant: CGFloat = .zero)
-    case left(constant: CGFloat = .zero)
-    case right(constant: CGFloat = .zero)
-    case bottom(constant: CGFloat = .zero)
+    case top(constant: CGFloat = .zero, priority: UILayoutPriority = .required)
+    case left(constant: CGFloat = .zero, priority: UILayoutPriority = .required)
+    case right(constant: CGFloat = .zero, priority: UILayoutPriority = .required)
+    case bottom(constant: CGFloat = .zero, priority: UILayoutPriority = .required)
     
     public static let centerVertically: LayoutPins = .relative(attribute: .centerY,
-                                                        relatedBy: .equal,
-                                                        to: .centerY,
-                                                        multiplier: 1,
-                                                        constant: 0)
+                                                               relatedBy: .equal,
+                                                               to: .centerY,
+                                                               multiplier: 1,
+                                                               constant: 0,
+                                                               priority: .required)
     public static let centerHorizontally: LayoutPins = .relative(attribute: .centerX,
-                                                          relatedBy: .equal,
-                                                          to: .centerX,
-                                                          multiplier: 1,
-                                                          constant: 0)
+                                                                 relatedBy: .equal,
+                                                                 to: .centerX,
+                                                                 multiplier: 1,
+                                                                 constant: 0,
+                                                                 priority: .required)
     public static let center: LayoutPins = [
         .centerVertically,
         .centerHorizontally
     ]
-    case width(constant: CGFloat, relation: NSLayoutConstraint.Relation = .equal)
-    case height(constant: CGFloat, relation: NSLayoutConstraint.Relation = .equal)
+    case pinToSize(size: CGSize)
+    case width(constant: CGFloat, relation: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = .required)
+    case height(constant: CGFloat, relation: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = .required)
     
     // MARK: - Regular Values
     
@@ -48,12 +47,14 @@ public enum LayoutPins: ExpressibleByArrayLiteral {
             relatedBy: NSLayoutConstraint.Relation,
             to: NSLayoutConstraint.Attribute,
             multiplier: CGFloat,
-            constant: CGFloat)
+            constant: CGFloat,
+            priority: UILayoutPriority)
     
     case fixed(
             attribute: NSLayoutConstraint.Attribute,
             relatedBy: NSLayoutConstraint.Relation,
-            constant: CGFloat)
+            constant: CGFloat,
+            priority: UILayoutPriority)
     
     indirect case safeArea(LayoutPins)
     
