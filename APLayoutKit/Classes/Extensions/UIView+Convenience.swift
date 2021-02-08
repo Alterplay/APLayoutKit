@@ -14,7 +14,7 @@ public extension UIView {
                                       configure: ((ViewType) -> Void)? = nil) -> ViewType {
         subview.translatesAutoresizingMaskIntoConstraints = false
         addSubview(subview)
-        pinSubview(subview, pin: pin)
+        self.pin(toView: subview, pin: pin)
         configure?(subview)
         return subview
     }

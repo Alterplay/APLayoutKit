@@ -15,10 +15,10 @@ public enum LayoutPins: ExpressibleByArrayLiteral {
     case pinToVerticalEdges(top: CGFloat = .zero, bottom: CGFloat = .zero)
     case pinToHorizontalEdges(left: CGFloat = .zero, right: CGFloat = .zero)
     
-    case top(constant: CGFloat = .zero, priority: UILayoutPriority = .required)
-    case left(constant: CGFloat = .zero, priority: UILayoutPriority = .required)
-    case right(constant: CGFloat = .zero, priority: UILayoutPriority = .required)
-    case bottom(constant: CGFloat = .zero, priority: UILayoutPriority = .required)
+    case top(constant: CGFloat = .zero, relation: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = .required)
+    case left(constant: CGFloat = .zero, relation: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = .required)
+    case right(constant: CGFloat = .zero, relation: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = .required)
+    case bottom(constant: CGFloat = .zero, relation: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = .required)
     
     public static let centerVertically: LayoutPins = .relative(attribute: .centerY,
                                                                relatedBy: .equal,
