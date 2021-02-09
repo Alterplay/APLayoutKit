@@ -61,11 +61,11 @@ extension UIView {
                                                         .right(constant: right)],
                                                     layoutGuide: layoutGuide))
         case .top(let constant, let relation, let priority):
-            constraints.append(contentsOf: self.pin(toView: view, pin: .relative(attribute: .top,
+            constraints.append(contentsOf: view.pin(toView: self, pin: .relative(attribute: .top,
                                                                                  relatedBy: relation,
                                                                                  to: .top,
                                                                                  multiplier: 1,
-                                                                                 constant: -constant,
+                                                                                 constant: constant,
                                                                                  priority: priority),
                                                     layoutGuide: layoutGuide))
         case .bottom(let constant, let relation, let priority):
@@ -77,11 +77,11 @@ extension UIView {
                                                                                  priority: priority),
                                                     layoutGuide: layoutGuide))
         case .left(let constant, let relation, let priority):
-            constraints.append(contentsOf: self.pin(toView: view, pin: .relative(attribute: .leading,
+            constraints.append(contentsOf: view.pin(toView: self, pin: .relative(attribute: .leading,
                                                                                  relatedBy: relation,
                                                                                  to: .leading,
                                                                                  multiplier: 1,
-                                                                                 constant: -constant,
+                                                                                 constant: constant,
                                                                                  priority: priority),
                                                     layoutGuide: layoutGuide))
         case .right(let constant, let relation, let priority):
