@@ -44,11 +44,11 @@ public enum LayoutPins: ExpressibleByArrayLiteral {
     
     case relative(
             attribute: NSLayoutConstraint.Attribute,
-            relatedBy: NSLayoutConstraint.Relation,
-            to: NSLayoutConstraint.Attribute,
-            multiplier: CGFloat,
+            relatedBy: NSLayoutConstraint.Relation = .equal,
+            to: NSLayoutConstraint.Attribute? = nil,
+            multiplier: CGFloat = 1,
             constant: CGFloat,
-            priority: UILayoutPriority)
+            priority: UILayoutPriority = .required)
     
     case fixed(
             attribute: NSLayoutConstraint.Attribute,

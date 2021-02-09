@@ -36,7 +36,7 @@ extension UIView {
                                                 attribute: attribute,
                                                 relatedBy: relatedBy,
                                                 toItem: view,
-                                                attribute: to,
+                                                attribute: to ?? attribute,
                                                 multiplier: multiplier,
                                                 constant: constant)
             constraint.priority = priority
