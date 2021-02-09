@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UILayoutPriority {
+public extension UILayoutPriority {
     static let nonRequired: UILayoutPriority = 999
 }
 
