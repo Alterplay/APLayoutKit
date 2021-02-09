@@ -42,56 +42,56 @@ extension UIView {
             constraint.priority = priority
             constraints.append(constraint)
         case .pinToAllEdges(let insets):
-            self.pin(toView: view,
-                       pin: [
-                        .pinToVerticalEdges(top: insets.top, bottom: insets.bottom),
-                        .pinToHorizontalEdges(left: insets.left, right: insets.right)
-                       ],
-                       layoutGuide: layoutGuide)
+            constraints.append(contentsOf: self.pin(toView: view,
+                                                    pin: [
+                                                        .pinToVerticalEdges(top: insets.top, bottom: insets.bottom),
+                                                        .pinToHorizontalEdges(left: insets.left, right: insets.right)
+                                                    ],
+                                                    layoutGuide: layoutGuide))
         case .pinToVerticalEdges(let top, let bottom):
-            self.pin(toView: view,
-                       pin: [
-                        .top(constant: top),
-                        .bottom(constant: bottom)],
-                       layoutGuide: layoutGuide)
+            constraints.append(contentsOf: self.pin(toView: view,
+                                                    pin: [
+                                                        .top(constant: top),
+                                                        .bottom(constant: bottom)],
+                                                    layoutGuide: layoutGuide))
         case .pinToHorizontalEdges(let left, let right):
-            self.pin(toView: view,
-                       pin: [
-                        .left(constant: left),
-                        .right(constant: right)],
-                       layoutGuide: layoutGuide)
+            constraints.append(contentsOf: self.pin(toView: view,
+                                                    pin: [
+                                                        .left(constant: left),
+                                                        .right(constant: right)],
+                                                    layoutGuide: layoutGuide))
         case .top(let constant, let relation, let priority):
-            self.pin(toView: view, pin: .relative(attribute: .top,
-                                               relatedBy: relation,
-                                               to: .top,
-                                               multiplier: 1,
-                                               constant: -constant,
-                                               priority: priority),
-                       layoutGuide: layoutGuide)
+            constraints.append(contentsOf: self.pin(toView: view, pin: .relative(attribute: .top,
+                                                                                 relatedBy: relation,
+                                                                                 to: .top,
+                                                                                 multiplier: 1,
+                                                                                 constant: -constant,
+                                                                                 priority: priority),
+                                                    layoutGuide: layoutGuide))
         case .bottom(let constant, let relation, let priority):
-            self.pin(toView: view, pin: .relative(attribute: .bottom,
-                                               relatedBy: relation,
-                                               to: .bottom,
-                                               multiplier: 1,
-                                               constant: constant,
-                                               priority: priority),
-                       layoutGuide: layoutGuide)
+            constraints.append(contentsOf: self.pin(toView: view, pin: .relative(attribute: .bottom,
+                                                                                 relatedBy: relation,
+                                                                                 to: .bottom,
+                                                                                 multiplier: 1,
+                                                                                 constant: constant,
+                                                                                 priority: priority),
+                                                    layoutGuide: layoutGuide))
         case .left(let constant, let relation, let priority):
-            self.pin(toView: view, pin: .relative(attribute: .leading,
-                                               relatedBy: relation,
-                                               to: .leading,
-                                               multiplier: 1,
-                                               constant: -constant,
-                                               priority: priority),
-                       layoutGuide: layoutGuide)
+            constraints.append(contentsOf: self.pin(toView: view, pin: .relative(attribute: .leading,
+                                                                                 relatedBy: relation,
+                                                                                 to: .leading,
+                                                                                 multiplier: 1,
+                                                                                 constant: -constant,
+                                                                                 priority: priority),
+                                                    layoutGuide: layoutGuide))
         case .right(let constant, let relation, let priority):
-            self.pin(toView: view, pin: .relative(attribute: .trailing,
-                                               relatedBy: relation,
-                                               to: .trailing,
-                                               multiplier: 1,
-                                               constant: constant,
-                                               priority: priority),
-                       layoutGuide: layoutGuide)
+            constraints.append(contentsOf: self.pin(toView: view, pin: .relative(attribute: .trailing,
+                                                                                 relatedBy: relation,
+                                                                                 to: .trailing,
+                                                                                 multiplier: 1,
+                                                                                 constant: constant,
+                                                                                 priority: priority),
+                                                    layoutGuide: layoutGuide))
         case .fixed,
              .width,
              .height,
