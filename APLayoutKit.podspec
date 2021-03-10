@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'APLayoutKit'
-  s.version          = '0.4.4'
+  s.version          = '0.4.5'
   s.summary          = 'Build layout in code using UIKit and check in SwiftUI preview'
   s.description      = <<-DESC
 Build your UIKIt layout in code using APLayoutKit and examine it in SwiftUI Preview
