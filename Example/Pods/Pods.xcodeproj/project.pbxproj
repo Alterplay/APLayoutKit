@@ -16,6 +16,7 @@
 		C2C02BA7B706753001C0C1CE5BBC5822 /* APLayoutKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDE357C27471F1345685B26CA687596 /* APLayoutKit-dummy.m */; };
 		D718BBABDD2F2EB91DDA39F26560FEBE /* APLayoutKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 656188058C564670B6C331E66785F7FE /* APLayoutKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE702FDB25D2A5FA00649163 /* UILayoutPriority+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE702FDA25D2A5FA00649163 /* UILayoutPriority+Convenience.swift */; };
+		DEE6D13525F8EDCD003F0B4B /* APBaseTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6D13425F8EDCD003F0B4B /* APBaseTableViewHeaderFooterView.swift */; };
 		DFD3C624254C3B9C00FD5331 /* UIView+LayoutPins.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C619254C3B9C00FD5331 /* UIView+LayoutPins.swift */; };
 		DFD3C625254C3B9C00FD5331 /* LayoutPins.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C61A254C3B9C00FD5331 /* LayoutPins.swift */; };
 		DFD3C626254C3B9C00FD5331 /* APBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3C61C254C3B9C00FD5331 /* APBaseTableViewCell.swift */; };
@@ -73,6 +74,7 @@
 		D4B24260EB87F23E94D815088FA74059 /* Pods-APLayoutKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-APLayoutKit_Example.modulemap"; sourceTree = "<group>"; };
 		DDB54359E7E112F2283242D8ABDBD8ED /* Pods-APLayoutKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-APLayoutKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		DE702FDA25D2A5FA00649163 /* UILayoutPriority+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutPriority+Convenience.swift"; sourceTree = "<group>"; };
+		DEE6D13425F8EDCD003F0B4B /* APBaseTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APBaseTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		DFD3C619254C3B9C00FD5331 /* UIView+LayoutPins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutPins.swift"; sourceTree = "<group>"; };
 		DFD3C61A254C3B9C00FD5331 /* LayoutPins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutPins.swift; sourceTree = "<group>"; };
 		DFD3C61C254C3B9C00FD5331 /* APBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APBaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				DFD3C61D254C3B9C00FD5331 /* APBaseCollectionViewCell.swift */,
 				DFD3C61E254C3B9C00FD5331 /* APBaseViewController.swift */,
 				DFD3C61F254C3B9C00FD5331 /* APBaseView.swift */,
+				DEE6D13425F8EDCD003F0B4B /* APBaseTableViewHeaderFooterView.swift */,
 			);
 			name = BaseView;
 			path = APLayoutKit/Classes/BaseView;
@@ -448,6 +451,7 @@
 				C2C02BA7B706753001C0C1CE5BBC5822 /* APLayoutKit-dummy.m in Sources */,
 				DFD3C62B254C3B9C00FD5331 /* UIView+Convenience.swift in Sources */,
 				DFD3C625254C3B9C00FD5331 /* LayoutPins.swift in Sources */,
+				DEE6D13525F8EDCD003F0B4B /* APBaseTableViewHeaderFooterView.swift in Sources */,
 				DFD3C626254C3B9C00FD5331 /* APBaseTableViewCell.swift in Sources */,
 				DFD3C629254C3B9C00FD5331 /* APBaseView.swift in Sources */,
 			);
