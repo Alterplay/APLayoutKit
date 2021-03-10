@@ -32,10 +32,17 @@ extension UIView {
                        let multiplier,
                        let constant,
                        let priority):
-            let constraint = NSLayoutConstraint(item: item(forLayoutGuide: layoutGuide),
+            // MARK: - TODO May be wrong should think about it
+            var item = self.item(forLayoutGuide: layoutGuide)
+            var toItem: Any = view
+            if layoutGuide != nil, attribute == .top {
+                item = self
+                toItem = view.item(forLayoutGuide: layoutGuide)
+            }
+            let constraint = NSLayoutConstraint(item: item,
                                                 attribute: attribute,
                                                 relatedBy: relatedBy,
-                                                toItem: view,
+                                                toItem: toItem,
                                                 attribute: to ?? attribute,
                                                 multiplier: multiplier,
                                                 constant: constant)
