@@ -32,10 +32,9 @@ extension UIView {
                        let multiplier,
                        let constant,
                        let priority):
-            // MARK: - TODO May be wrong should think about it
             var item = self.item(forLayoutGuide: layoutGuide)
             var toItem: Any = view
-            if layoutGuide != nil, attribute == .top {
+            if layoutGuide == .safeArea, attribute == .top, self.superview === view {
                 item = self
                 toItem = view.item(forLayoutGuide: layoutGuide)
             }
