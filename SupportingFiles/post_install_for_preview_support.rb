@@ -17,12 +17,6 @@ post_install do |installer|
                 end
             end
         end
-        project_pod_target = installer.pods_project.targets.find do |pod_target|
-            pod_target.name == pod_target_name_prefix + project_target.name
-        end
-        project_pod_target.build_configurations.each do |config|
-            config.build_settings['MACH_O_TYPE[sdk=iphonesimulator*]'] = "mh_dylib"
-        end
     end
     project.save
   end
